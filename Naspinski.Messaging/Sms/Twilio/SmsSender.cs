@@ -15,6 +15,7 @@ namespace Naspinski.Messaging.Sms.Twilio
             _twilioSid = twilioSid;
             _twilioAuthToken = twilioAuthToken;
         }
+
         public TwilioSmsSender(TwilioHelper helper)
         {
             _twilioSid = helper.Sid;
