@@ -4,21 +4,18 @@ using Xunit;
 
 namespace Naspinski.Messaging.Tests
 {
-    public class EmailTests
+    public class EmailTests : TestBase
     {
-        [Fact]
-        public void BasicSend()
-        {
-            BasicSendAsync().Wait();
-        }
+        public EmailTests() : base() { }
 
-        private async Task BasicSendAsync()
-        { 
-            await EmailSender.Send(Keys.SendgridApiKey, 
+        [Fact]
+        public async Task BasicSend()
+        {
+            await EmailSender.Send(SendgridApiKey, 
                 "Naspinski.Messaging.Tests.EmailTests.BasicSend", 
                 "test message", 
-                Keys.ToEmail, 
-                Keys.FromEmail);
+                ToEmail, 
+                FromEmail);
             Assert.True(true);
         }
     }
