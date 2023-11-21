@@ -7,6 +7,10 @@ namespace Naspinski.Messaging.Tests
         protected readonly string SendgridApiKey;
         protected readonly string FromEmail;
         protected readonly string ToEmail;
+        protected readonly string TwilioSid;
+        protected readonly string TwilioAuthToken;
+        protected readonly string TwilioPhone;
+        protected readonly string ToPhone;
 
         public TestBase()
         {
@@ -16,6 +20,12 @@ namespace Naspinski.Messaging.Tests
             SendgridApiKey = config["SENDGRID_API_KEY"];
             FromEmail = config["FROM_EMAIL"];
             ToEmail = config["TO_EMAIL"];
+            
+            TwilioSid = config["TWILIO_SID"];
+            TwilioAuthToken = config["TWILIO_AUTH_TOKEN"]; 
+            TwilioPhone = config["TWILIO_PHONE"];
+
+            ToPhone = config["TO_PHONE"];
         }
     }
 }
